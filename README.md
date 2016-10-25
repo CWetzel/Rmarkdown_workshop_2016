@@ -4,3 +4,5 @@ Slides and examples for the Stock Assessment Template with Git and R workshops a
 This is a change I made during the workshop.
 
 Here is another test change
+
+Trying a different change
