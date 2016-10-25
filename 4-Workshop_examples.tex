@@ -31,6 +31,46 @@
             pdfborder={0 0 0},
             breaklinks=true}
 \urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{{#1}}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{{#1}}}
+\newcommand{\ImportTok}[1]{{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{{#1}}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{{#1}}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{{#1}}}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{{#1}}}}
+\newcommand{\BuiltInTok}[1]{{#1}}
+\newcommand{\ExtensionTok}[1]{{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{{#1}}}
+\newcommand{\RegionMarkerTok}[1]{{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{{#1}}}}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{{#1}}}}
+\newcommand{\NormalTok}[1]{{#1}}
 \usepackage{graphicx,grffile}
 \makeatletter
 \def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
@@ -72,8 +112,19 @@
   \predate{}\postdate{}
 
 
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
 % This file contains all of the LaTeX packages you may need to compile the document
 % Documentation for each package can be found onlines
+\usepackage{datetime2}
 \usepackage{tabularx}                                             % table environment providing flexibility
 \usepackage{caption}                                              % for creating captions  
 \usepackage{longtable}                                            % allows tables to span multiple pages
@@ -109,16 +160,6 @@
 \definecolor{light-gray}{gray}{.85}
 %\usepackage[tagged]{accessibility-meta}
 
-% Redefines (sub)paragraphs to behave more like sections
-\ifx\paragraph\undefined\else
-\let\oldparagraph\paragraph
-\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
-\fi
-\ifx\subparagraph\undefined\else
-\let\oldsubparagraph\subparagraph
-\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
-\fi
-
 \begin{document}
 \maketitle
 
@@ -140,19 +181,65 @@ variables in your Environment.
 \section{Epmhasis (R markdown and
 LaTeX)}\label{epmhasis-r-markdown-and-latex}
 
+\emph{Sebastes}
+
+\emph{Sebastes}
+
+\textit{Sebastes}
+
 \section{Headers}\label{headers}
+
+\subsection{Subhead 2}\label{subhead-2}
+
+\subsubsection{Subhead 3}\label{subhead-3}
+
+\paragraph{Subhead 4}\label{subhead-4}
 
 \section{Commenting}\label{commenting}
 
 \section{Links}\label{links}
 
+\href{www.github.com}{Github}
+
 \section{Lists}\label{lists}
+
+R Markdown are finicky with spacing\ldots{} * Item 1 * Item 2 + Item 2a
++ Item 2b
+
+\begin{itemize}
+\tightlist
+\item
+  Item 1
+\item
+  Item 2
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Item 2a
+  \item
+    Item 2b
+  \end{itemize}
+\end{itemize}
+
+Bulleted list
+
+\begin{itemize}[noitemsep,nolistsep,topsep=0pt]
+
+\item \href{https://git-scm.com/book/en/v2/Getting-Started-Installing-Git}{Git}
+
+\item \href{https://cran.r-project.org/bin/windows/base/}{R}
+
+\end{itemize}
 
 \section{References and Citations}\label{references-and-citations}
 
 We can reference a document section, see Lists in Section \ref{lists}.
 
-Citations: (Love et al. \protect\hyperlink{ref-Love2002}{2002})
+Citations: (Love et al. \protect\hyperlink{ref-Love2002}{2002},
+\protect\hyperlink{ref-Love2002}{2002})
+
+Love (\protect\hyperlink{ref-Love2002}{2002})
 
 \section{Figure from a file}\label{figure-from-a-file}
 
@@ -162,6 +249,18 @@ You can use any file extension, including PDFs
 \centering
 \includegraphics{RMarkdownFLow.png}
 \caption{Here's my caption \label{fig:fig_example}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{Fig_Example/RMarkdownFLow.png}
+\caption{Here's my caption \label{fig:fig_example2}}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering
+\includegraphics{./Fig_Example/RMarkdownFLow.png}
+\caption{Here's my caption \label{fig:fig_example3}}
 \end{figure}
 
 Figures are referenced using LaTeX syntax \ref{fig:fig_example}.
@@ -175,18 +274,86 @@ referencing it.
 
 You can embed an R code chunk like this:
 
+\begin{verbatim}
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+\end{verbatim}
+
 Play witht the r code chunk options, echo=TRUE, include=FALSE,
 results=`asis'
+
+\begin{Shaded}
+\begin{Highlighting}[]
+    \KeywordTok{summary}\NormalTok{(cars)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      speed           dist       
+##  Min.   : 4.0   Min.   :  2.00  
+##  1st Qu.:12.0   1st Qu.: 26.00  
+##  Median :15.0   Median : 36.00  
+##  Mean   :15.4   Mean   : 42.98  
+##  3rd Qu.:19.0   3rd Qu.: 56.00  
+##  Max.   :25.0   Max.   :120.00
+\end{verbatim}
+
+\FloatBarrier
 
 \section{Figure from R code chunk}\label{figure-from-r-code-chunk}
 
 You can also embed plots, for example:
 
+\begin{figure}[htbp]
+\centering
+\includegraphics{4-Workshop_examples_files/figure-latex/pressure-1.pdf}
+\caption{Figure of something at \(40^\circ 10^\prime\).
+\label{fig:pressure}}
+\end{figure}
+
+This is the inline math mode fore LaTex \(40^\circ 10^\prime\)
+
+If you want to have a backslash \textbackslash{}
+
+If you want a percent sign you have a backslash \%
+
 Note, you need extra \textbackslash{}s when using LaTeX syntax within an
 R code chunk, or when inserting a backslash in R markdown. The same goes
 with percent signs and any other LaTeX reserved symbol.
 
+\FloatBarrier
+
+We can now reference Figure \ref{fig:pressure}. Note where this text
+ends up.
+
+Note that the \texttt{echo\ =\ FALSE} parameter was added to the code
+chunk to prevent printing of the R code that generated the plot.
+
 \section{Tables}\label{tables}
+
+\begin{table}[ht]
+\centering
+\caption{This is where you write your caption} 
+\label{tab:Table_example}
+\scalebox{0.8}{
+\begin{tabular}{crcrcrcrcrc}
+  \hline
+Sample & Test1 & Test2 & Test3 & Test4 & Test5 & Test6 & Test7 & Test8 & Test9 & Test10 \\ 
+  \hline
+1 & 333000000000 & 97 & 45 & 7169 & 5656 & 2642 & 8534 & 9173 & 230 & 2733 \\ 
+  3 & 345 & 976 & 6 & 105 & 6382 & 2277 & 5848 & 7339495403 & 8613 & 5025 \\ 
+  5 & 34 & 3333333333 & 7 & 2395 & 5632 & 5542 & 1645 & 380 & 1263 & 6728 \\ 
+  7 & 234 & 34 & 46 & 5619 & 6063 & 8973 & 9362 & 1870 & 7651 & 683 \\ 
+  9 & 234 & 0 & 45 & 6531 & 6824 & 3609 & 7627 & 3363 & 1534 & 8333 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
 
 Try changing the R chunk options above.
 
@@ -201,7 +368,36 @@ computer.
 
 Now, create a table!
 
+\begin{table}[ht]
+\centering
+\caption{This is where you write your caption} 
+\label{tab:Table_test}
+\scalebox{1}{
+\begin{tabular}{ccc}
+  \hline
+Year & Peanut Butter & Jelly \\ 
+  \hline
+1999 & 3.45 & 1.23 \\ 
+  2000 & 3.45 & 1.23 \\ 
+  2001 & 3.45 & 1.23 \\ 
+  2002 & 3.45 & 1.23 \\ 
+  2003 & 3.45 & 1.23 \\ 
+   \hline
+\end{tabular}
+}
+\end{table}
+
 \section{Math mode}\label{math-mode}
+
+You can use LaTeX math mode both inline and for inserting equations.
+It's handy for using inline math mode for management measure and
+lat/long.
+
+Inline looks like this: \(SPR_{40\%}\)\\
+*Note the \% sign has a ~when used in math mode, but not in R markdown
+text.
+
+To get degrees and minutes type: \(40^\circ 10^\prime\)
 
 \section*{References}\label{references}
 \addcontentsline{toc}{section}{References}

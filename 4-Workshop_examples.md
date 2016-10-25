@@ -19,15 +19,7 @@ bibliography: BibFile.bib
 link-citations: yes
 ---
 
-```{r global_options, include=FALSE}
-    # set global options for R code chunks: echo=FALSE (don't include source code); 
-    # warning=FALSE (suppress R warnings); message=FALSE (suppress R messages)
-    # eval = TRUE is default
-     knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
-    library(xtable)
-    options(xtable.comment = FALSE)  # turns off xtable comments
-```
 
 Change some of the YAML settings to see what happens.
 
@@ -120,10 +112,6 @@ You can use any file extension, including PDFs
 
 ![Here's my caption \label{fig:fig_example}](RMarkdownFLow.png)
 
-![Here's my caption \label{fig:fig_example2}](Fig_Example\RMarkdownFLow.png)
-
-![Here's my caption \label{fig:fig_example3}](./Fig_Example/RMarkdownFLow.png)
-
 Figures are referenced using LaTeX syntax \ref{fig:fig_example}.
 
 Put a space between the ] and ( above. Knit the document.  
@@ -137,67 +125,36 @@ Now try adding your own picture to the directory, adding it in here, and referen
 
 You can embed an R code chunk like this:
 
-```{r cars} #, echo=FALSE, include=T}
-summary(cars)
-```
+
 
 
 Play witht the r code chunk options, echo=TRUE, include=FALSE, results='asis'
 
-````{r cars, echo = TRUE, include = TRUE}
-    summary(cars)
-````
 
-\FloatBarrier
+
+
 
 # Figure from R code chunk
 
 You can also embed plots, for example:
 
-```{r pressure, fig.cap="Figure of something  at $40^\\circ 10^\\prime$. \\label{fig:pressure}"}
-plot(pressure)
-```
 
-This is the inline math mode fore LaTex $40^\circ 10^\prime$
-
-If you want to have a backslash \\
-
-If you want a percent sign you have a backslash \%
 
 Note, you need extra \\s when using LaTeX syntax within an R code chunk, or when inserting a backslash in R markdown.  The same goes with percent signs and any other LaTeX reserved symbol.
 
-\FloatBarrier
 
 
-
-
+<!--
 We can now reference Figure \ref{fig:pressure}.  Note where this text ends up.
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
-
+-->
 
 
 #Tables
 
-```{r results='asis'}
-#, results='asis', echo=FALSE, include=FALSE, message=FALSE, warning=FALSE
-Tab = read.csv('Table_example.csv')
 
-Tab_example = xtable(Tab, 
-                   caption=c('This is where you write your caption'),
-                   label = 'tab:Table_example',
-                   digits = 0)
-
-align(Tab_example) = 'lcrcrcrcrcrc' # the first one is for row names
-
-print(Tab_example, include.rownames = FALSE, caption.placement = 'top', scalebox = 0.8)
-
-# print option to try, scalebox = 0.7
-# add alignment
-
-
-```
 
 
 
@@ -214,32 +171,11 @@ Either create a .csv file or copy one into the repo folder on your computer.
 
 Now, create a table!
 
-```{r results='asis'}
-#, results='asis', echo=FALSE, include=FALSE, message=FALSE, warning=FALSE
-Tab = read.csv('csvfiles\\test.csv')
-
-Tab_test = xtable(Tab, 
-                   caption=c('This is where you write your caption'),
-                   label = 'tab:Table_test',
-                   digits = 2)
-
-align(Tab_test) = 'lccc' # the first one is for row names
-
-colnames(Tab_test) = c("Year","Peanut Butter","Jelly")
-
-print(Tab_test, include.rownames = FALSE, caption.placement = 'top', scalebox = 1)
-
-# print option to try, scalebox = 0.7
-# add alignment
-
-
-```
-
 
 
 
 #Math mode
-
+ <!--
 You can use LaTeX math mode both inline and for inserting equations. It's handy for using inline math mode for management measure and lat/long.
 
 Inline looks like this:  $SPR_{40\%}$  
@@ -247,7 +183,7 @@ Inline looks like this:  $SPR_{40\%}$
 
 To get degrees and minutes type: $40^\circ 10^\prime$   
 
-
+-->
 
 #References
 
