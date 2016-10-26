@@ -169,7 +169,7 @@
 }
 Change some of the YAML settings to see what happens.
 
-Notice, the down arrow at line 22. If you click this, you can hide the R
+Notice, the down arrow at line 25. If you click this, you can hide the R
 code chunk. This is helpful when working through a large document.
 
 On the right side of the R code chunk are additional options, Settings,
@@ -181,11 +181,21 @@ variables in your Environment.
 \section{Epmhasis (R markdown and
 LaTeX)}\label{epmhasis-r-markdown-and-latex}
 
+<<<<<<< HEAD
+=======
+\emph{Sebastes}\\
+>>>>>>> refs/remotes/melmonk/master
 \emph{Sebastes}
 
 \emph{Sebastes}
 
+<<<<<<< HEAD
 \textit{Sebastes}
+=======
+\textbf{\emph{Sebastes}}\\
+\textbf{Sebastes}\\
+\emph{\textbf{Sebastes}}
+>>>>>>> refs/remotes/melmonk/master
 
 \section{Headers}\label{headers}
 
@@ -195,6 +205,11 @@ LaTeX)}\label{epmhasis-r-markdown-and-latex}
 
 \paragraph{Subhead 4}\label{subhead-4}
 
+<<<<<<< HEAD
+=======
+\emph{Subhead 5}
+
+>>>>>>> refs/remotes/melmonk/master
 \section{Commenting}\label{commenting}
 
 \section{Links}\label{links}
@@ -203,8 +218,12 @@ LaTeX)}\label{epmhasis-r-markdown-and-latex}
 
 \section{Lists}\label{lists}
 
+<<<<<<< HEAD
 R Markdown are finicky with spacing\ldots{} * Item 1 * Item 2 + Item 2a
 + Item 2b
+=======
+R Markdown are finicky with spacing\ldots{}
+>>>>>>> refs/remotes/melmonk/master
 
 \begin{itemize}
 \tightlist
@@ -220,6 +239,21 @@ R Markdown are finicky with spacing\ldots{} * Item 1 * Item 2 + Item 2a
   \item
     Item 2b
   \end{itemize}
+<<<<<<< HEAD
+=======
+\item
+  Item 1
+\item
+  Item 2
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Item 2a
+  \item
+    Item 2b
+  \end{itemize}
+>>>>>>> refs/remotes/melmonk/master
 \end{itemize}
 
 Bulleted list
@@ -232,6 +266,19 @@ Bulleted list
 
 \end{itemize}
 
+<<<<<<< HEAD
+=======
+Numbered list
+
+\begin{enumerate}[noitemsep,nolistsep,topsep=0pt]
+
+\item \href{https://git-scm.com/book/en/v2/Getting-Started-Installing-Git}{Git}
+
+\item \href{https://cran.r-project.org/bin/windows/base/}{R} 
+
+\end{enumerate}
+
+>>>>>>> refs/remotes/melmonk/master
 \section{References and Citations}\label{references-and-citations}
 
 We can reference a document section, see Lists in Section \ref{lists}.
@@ -253,6 +300,7 @@ You can use any file extension, including PDFs
 
 \begin{figure}[htbp]
 \centering
+<<<<<<< HEAD
 \includegraphics{Fig_Example/RMarkdownFLow.png}
 \caption{Here's my caption \label{fig:fig_example2}}
 \end{figure}
@@ -261,6 +309,10 @@ You can use any file extension, including PDFs
 \centering
 \includegraphics{./Fig_Example/RMarkdownFLow.png}
 \caption{Here's my caption \label{fig:fig_example3}}
+=======
+\includegraphics{./Figures/RMarkdownFLow1.png}
+\caption{Here's my caption 2 \label{fig:fig_example2}}
+>>>>>>> refs/remotes/melmonk/master
 \end{figure}
 
 Figures are referenced using LaTeX syntax \ref{fig:fig_example}.
@@ -284,6 +336,7 @@ You can embed an R code chunk like this:
 ##  Max.   :25.0   Max.   :120.00
 \end{verbatim}
 
+<<<<<<< HEAD
 Play witht the r code chunk options, echo=TRUE, include=FALSE,
 results=`asis'
 
@@ -303,6 +356,11 @@ results=`asis'
 ##  Max.   :25.0   Max.   :120.00
 \end{verbatim}
 
+=======
+Play with the r code chunk options, echo=TRUE, include=FALSE,
+results=`asis'
+
+>>>>>>> refs/remotes/melmonk/master
 \FloatBarrier
 
 \section{Figure from R code chunk}\label{figure-from-r-code-chunk}
@@ -316,15 +374,28 @@ You can also embed plots, for example:
 \label{fig:pressure}}
 \end{figure}
 
+<<<<<<< HEAD
 This is the inline math mode fore LaTex \(40^\circ 10^\prime\)
 
 If you want to have a backslash \textbackslash{}
 
 If you want a percent sign you have a backslash \%
+=======
+This is inline math mode for Latex \(40^\circ 10^\prime\)
+>>>>>>> refs/remotes/melmonk/master
 
 Note, you need extra \textbackslash{}s when using LaTeX syntax within an
 R code chunk, or when inserting a backslash in R markdown. The same goes
-with percent signs and any other LaTeX reserved symbol.
+with percent signs and any other LaTeX reserved symbol. You can use a \%
+\(\%\)
+
+We can now reference Figure \ref{fig:pressure}. Note where this text
+ends up.
+
+Note that the \texttt{echo\ =\ FALSE} parameter was added to the code
+chunk to prevent printing of the R code that generated the plot.
+
+\FloatBarrier
 
 \FloatBarrier
 
@@ -340,7 +411,11 @@ chunk to prevent printing of the R code that generated the plot.
 \centering
 \caption{This is where you write your caption} 
 \label{tab:Table_example}
+<<<<<<< HEAD
 \scalebox{0.8}{
+=======
+\scalebox{0.7}{
+>>>>>>> refs/remotes/melmonk/master
 \begin{tabular}{crcrcrcrcrc}
   \hline
 Sample & Test1 & Test2 & Test3 & Test4 & Test5 & Test6 & Test7 & Test8 & Test9 & Test10 \\ 

@@ -1,22 +1,25 @@
 ---
-title: "Workshop Examples"  
+title: "Workshop Examples"
 author: "Melissa Monk"
 date: ''
 output:
   pdf_document:
-    fig_caption: yes    
+    fig_caption: yes
     includes:
       in_header: header.tex
     keep_tex: yes
     number_sections: yes
     toc: yes
     toc_depth: 4
+  html_document:
+    toc: yes
+    toc_depth: '4'
 documentclass: article
 fontsize: 12pt
 geometry: margin=1in
+link-citations: yes
 csl: CJFAS.csl
 bibliography: BibFile.bib
-link-citations: yes
 ---
 
 ```{r global_options, include=FALSE}
@@ -25,13 +28,18 @@ link-citations: yes
     # eval = TRUE is default
      knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
+<<<<<<< HEAD
     library(xtable)
     options(xtable.comment = FALSE)  # turns off xtable comments
+=======
+      library(xtable)
+      options(xtable.comment = FALSE)  # turns off xtable comments
+>>>>>>> refs/remotes/melmonk/master
 ```
 
 Change some of the YAML settings to see what happens.
 
-Notice, the down arrow at line 22.  If you click this, you can hide the R code chunk.  This is helpful when working through a large document.
+Notice, the down arrow at line 25.  If you click this, you can hide the R code chunk.  This is helpful when working through a large document.
 
 On the right side of the R code chunk are additional options, Settings, a down arrow (run previous R code chunks), and a green play button (runs the current chunk).  It's handy to check R code chunks as you go and to debug.  Within the Assessment template, this is also the only way to see variables in your Environment. 
 
@@ -39,7 +47,18 @@ On the right side of the R code chunk are additional options, Settings, a down a
 
 # Epmhasis (R markdown and LaTeX)
 
+<<<<<<< HEAD
 *Sebastes*
+=======
+*Sebastes*  
+_Sebastes_
+
+\emph{Sebastes}
+
+**_Sebastes_**  
+__Sebastes__  
+\emph{\textbf{Sebastes}}  
+>>>>>>> refs/remotes/melmonk/master
 
 \emph{Sebastes}
 
@@ -49,27 +68,45 @@ On the right side of the R code chunk are additional options, Settings, a down a
 # Headers
 
 ## Subhead 2
+<<<<<<< HEAD
 
 ### Subhead 3
 
+=======
+### Subhead 3
+>>>>>>> refs/remotes/melmonk/master
 #### Subhead 4
 
+*Subhead 5*
 
 
 # Commenting
 
+<<<<<<< HEAD
 <!-- comment here -->
+=======
+<!-- comment here  -->
+>>>>>>> refs/remotes/melmonk/master
 
 
 
 # Links
 
 [Github](www.github.com)
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/melmonk/master
 
 
 # Lists
 
+<<<<<<< HEAD
 R Markdown are finicky with spacing...
+=======
+R Markdown are finicky with spacing...     
+
+>>>>>>> refs/remotes/melmonk/master
 * Item 1
 * Item 2
     + Item 2a
@@ -83,6 +120,10 @@ R Markdown are finicky with spacing...
 
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> refs/remotes/melmonk/master
 Bulleted list
 
 \begin{itemize}[noitemsep,nolistsep,topsep=0pt]
@@ -92,10 +133,13 @@ Bulleted list
 \item \href{https://cran.r-project.org/bin/windows/base/}{R}
 
 \end{itemize}
+<<<<<<< HEAD
+
+=======
+>>>>>>> refs/remotes/melmonk/master
 
 
 
-<!--
 Numbered list
 \begin{enumerate}[noitemsep,nolistsep,topsep=0pt]
 
@@ -104,13 +148,17 @@ Numbered list
 \item \href{https://cran.r-project.org/bin/windows/base/}{R} 
 
 \end{enumerate}
--->
+
 
 # References and Citations
 
 We can reference a document section, see Lists in Section \ref{lists}.
 
+<<<<<<< HEAD
 Citations: [@Love2002; @Love2002]
+=======
+Citations: [@Love2002;@Love2002]
+>>>>>>> refs/remotes/melmonk/master
 
 Love [-@Love2002]
 
@@ -120,9 +168,13 @@ You can use any file extension, including PDFs
 
 ![Here's my caption \label{fig:fig_example}](RMarkdownFLow.png)
 
+<<<<<<< HEAD
 ![Here's my caption \label{fig:fig_example2}](Fig_Example\RMarkdownFLow.png)
 
 ![Here's my caption \label{fig:fig_example3}](./Fig_Example/RMarkdownFLow.png)
+=======
+![Here's my caption 2 \label{fig:fig_example2}](./Figures/RMarkdownFLow1.png)
+>>>>>>> refs/remotes/melmonk/master
 
 Figures are referenced using LaTeX syntax \ref{fig:fig_example}.
 
@@ -137,18 +189,30 @@ Now try adding your own picture to the directory, adding it in here, and referen
 
 You can embed an R code chunk like this:
 
+<<<<<<< HEAD
 ```{r cars} #, echo=FALSE, include=T}
+=======
+```{r cars}
+>>>>>>> refs/remotes/melmonk/master
 summary(cars)
+
+#adsflkasjfaslkdfj
 ```
 
 
-Play witht the r code chunk options, echo=TRUE, include=FALSE, results='asis'
-
+<<<<<<< HEAD
 ````{r cars, echo = TRUE, include = TRUE}
     summary(cars)
 ````
 
 \FloatBarrier
+=======
+Play with the r code chunk options, echo=TRUE, include=FALSE, results='asis'
+
+
+\FloatBarrier
+
+>>>>>>> refs/remotes/melmonk/master
 
 # Figure from R code chunk
 
@@ -158,6 +222,7 @@ You can also embed plots, for example:
 plot(pressure)
 ```
 
+<<<<<<< HEAD
 This is the inline math mode fore LaTex $40^\circ 10^\prime$
 
 If you want to have a backslash \\
@@ -169,35 +234,60 @@ Note, you need extra \\s when using LaTeX syntax within an R code chunk, or when
 \FloatBarrier
 
 
+=======
+This is inline math mode for Latex  $40^\circ 10^\prime$  
+
+Note, you need extra \\s when using LaTeX syntax within an R code chunk, or when inserting a backslash in R markdown.  The same goes with percent signs and any other LaTeX reserved symbol. You can use  a %  $\%$ 
+>>>>>>> refs/remotes/melmonk/master
 
 
 We can now reference Figure \ref{fig:pressure}.  Note where this text ends up.
 
 Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
 
+<<<<<<< HEAD
 
+=======
+\FloatBarrier
+>>>>>>> refs/remotes/melmonk/master
 
 
 #Tables
 
+<<<<<<< HEAD
 ```{r results='asis'}
+=======
+
+
+```{r, results='asis'}
+>>>>>>> refs/remotes/melmonk/master
 #, results='asis', echo=FALSE, include=FALSE, message=FALSE, warning=FALSE
 Tab = read.csv('Table_example.csv')
 
 Tab_example = xtable(Tab, 
                    caption=c('This is where you write your caption'),
                    label = 'tab:Table_example',
+<<<<<<< HEAD
                    digits = 0)
 
 align(Tab_example) = 'lcrcrcrcrcrc' # the first one is for row names
 
 print(Tab_example, include.rownames = FALSE, caption.placement = 'top', scalebox = 0.8)
+=======
+                   digits=0)  
+
+align(Tab_example) = 'lcrcrcrcrcrc'
+
+print(Tab_example, include.rownames = FALSE, caption.placement = 'top', scalebox=.7)
+>>>>>>> refs/remotes/melmonk/master
 
 # print option to try, scalebox = 0.7
 # add alignment
 
 
 ```
+
+
 
 
 
@@ -234,6 +324,9 @@ print(Tab_test, include.rownames = FALSE, caption.placement = 'top', scalebox = 
 
 
 ```
+
+
+
 
 
 
